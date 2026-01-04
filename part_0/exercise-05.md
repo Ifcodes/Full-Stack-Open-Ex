@@ -4,7 +4,7 @@ participant Browser
 participant Server
 
 Note left of Browser: Brower makes GET request /exampleapp/spa endpoint
-activate server
+activate Server
 Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
 Server-->>Browser: spa (HTML)
 
@@ -19,10 +19,10 @@ Server-->>Browser: data.json raw file - [{"content":"x","date":"2020-11-07T11:25
 
 Note left of Browser: notes gets rendered on Browser
 
-browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
 Note right of browser: The note title input is submitted to the server through the endpoint /new_note_spa
-server-->>browser: A server response with status 201. Created.
+Server-->>Browser: A server response with status 201. Created.
 
-Note right of browser: Note is successfully added.
-deactivate server
+Note right of Browser: Note is successfully added.
+deactivate Server
 ```
